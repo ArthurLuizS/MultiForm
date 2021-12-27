@@ -1,8 +1,11 @@
 import {Router} from './router'
+import {FormProvider} from './Context/FormContext'
 
 const App = () =>{
   return (
-    <Router />
+    <FormProvider>
+      <Router />
+    </FormProvider>
   );
 }
 
