@@ -36,7 +36,7 @@ type formProviderProps = {
 const FormContext = createContext<ContextType | undefined>(undefined);
 
 //Reducer
-enum FormAction {
+export  enum FormAction {
     setCurrentStep,
     setName,
     setLevel,
@@ -69,7 +69,7 @@ const formReducer = (state: State, action: Action) => {
 
 //Provider
 
-const FormProvider = ({children} : formProviderProps) => {
+export const FormProvider = ({children} : formProviderProps) => {
     const [state, dispatch] = useReducer(formReducer, initialData);
     const value = {state, dispatch}
     
@@ -82,7 +82,7 @@ const FormProvider = ({children} : formProviderProps) => {
 
 //Context hook
 
-const useForm = () => {
+export const useForm = () => {
     const context = useContext(FormContext);
     if ( context === undefined) {
         throw new Error('UseForm precisa se usado dentro do FormProvider');
