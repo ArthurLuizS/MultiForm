@@ -11,7 +11,11 @@ export const FormStep1 = () =>{
     const {state, dispatch} = useForm();
 
     const handleNextStep = () =>{
+        if(state.name !== ''){
             history('/step2')
+        } else {
+            alert("Preencha seus dados")
+        }
     };
 
     useEffect(() =>{
