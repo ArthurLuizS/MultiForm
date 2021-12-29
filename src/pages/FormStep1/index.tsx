@@ -46,6 +46,7 @@ export const FormStep1 = () =>{
                 Nome completo: 
                 <input 
                     type= "text"
+                    value={state.name}
                     autoFocus
                     onChange={handleSetName}
                 ></input>
