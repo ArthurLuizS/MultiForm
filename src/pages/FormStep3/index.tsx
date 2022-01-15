@@ -11,10 +11,11 @@ export const FormStep3 = () =>{
     const {state, dispatch} = useForm();
 
     const handleNextStep = () =>{
-        if(state.name !== ''){
-            history('/step2')
+        if(state.email !== "" && state.github !== ""){
+            console.log(state)
+
         } else {
-            alert("Preencha seus dados")
+            alert("preencha todos os dados")
         }
     };
 
@@ -64,7 +65,7 @@ export const FormStep3 = () =>{
                 ></input>
             </label>
             <Link to="/step2" className='backButton'>Voltar</Link>
-            <button onClick={handleNextStep}>Próximo</button>
+            <button onClick={handleNextStep}>Finalizar Cadastro</button>
             </C.Container>
         </Theme>
     );
